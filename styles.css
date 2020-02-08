@@ -1,0 +1,50 @@
+body{
+	padding: 0px;
+	margin: 0px;
+}
+#video-container {
+	position: absolute;
+	width: 100%;
+}
+
+#controls {
+	visibility: visible;
+}
+
+#left-btn-container {
+  position: absolute;
+  left: 5%;
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+#right-btn-container {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+}
+
+#play-btn{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+  background-image: url("images/player/play_btn.png");
+  background-size: cover;
+}
+
+#play-btn:active {
+    width: 70px;
+    height: 74px;
+}
+#pause-btn{
+  width: 100px;
+  height: 100px;
+  background-image: url("images/player/pause_btn.png");
+  background-size: cover;
+}
+
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
