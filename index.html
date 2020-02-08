@@ -5,17 +5,37 @@
 	<title>Test Website</title>
 
 	<link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-status-bar" content="#aa7700">
-<link rel="apple-touch-icon" href="/images/icon-128x128.png">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+<link rel="manifest" href="manifest.webmanifest" />
 </head>
 <body>
 
 	<main>
-	<video width="1280" height="720" controls>
-  	<source src="dancingMan.mp4" type="video/mp4">
-	Your browser does not support the video tag.
-	</video>
+		<div id="video-container">
+			<video id="video-player" id="video-player">
+		  	<source src="Novocure_cutdown_v02.mp4" type="video/mp4">
+			Your browser does not support the video tag.
+
+			</video>
+			<div id="controls">
+				<div id="left-btn-container">
+				  	<div id="play-btn"></div>
+				  	<div id="pause-btn"></div>
+				</div>
+				<div id="right-btn-container">
+					Click me!
+				</div>
+			</div>
+		</div>
 </main>
 <script src="app.js"></script>
+ <script src="upup.min.js"></script>
+  <script>
+    UpUp.start({
+      'content-url': 'index.html',
+  	  'assets': ['app.js', 'styles.css', 'Novocure_cutdown_v02.mp4']
+
+    });
+  </script>
 </body>
 </html>
