@@ -10,6 +10,10 @@
 <link rel="apple-touch-icon" href="../images/icons/icon-144x144.png">
 	<link rel="stylesheet" type="text/css" href="styles.css">
 <link rel="manifest" href="manifest.webmanifest" />
+<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.9/pwacompat.min.js"
+    integrity="sha384-VcI6S+HIsE80FVM1jgbd6WDFhzKYA0PecD/LcIyMQpT4fMJdijBh0I7Iblaacawc"
+    crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -26,12 +30,22 @@
 				  	<div id="pause-btn"></div>
 				</div>
 				<div id="right-btn-container">
-					Click me!
+					<a class="button" id="section-btn-1" time-code="60" onclick="skipToTime(this.id)">Section 1 - Name of section</a><br>
+					<a class="button" id="section-btn-2" time-code="90" onclick="skipToTime(this.id)">Section 2 - The name of other section</a>
+
 				</div>
 			</div>
 		</div>
-</main>
-<script src="app.js"></script>
+	</main>
+<script src="jquery-3.4.1.min.js"></script>
 
+<script src="app.js"></script>
+  <script src="/upup.min.js"></script>
+  <script>
+    UpUp.start({
+      'content-url': 'index.html',
+      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'novocure-film.mp4']
+    });
+  </script>
 </body>
 </html>

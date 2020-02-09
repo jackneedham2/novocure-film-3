@@ -1,28 +1,35 @@
 body{
 	padding: 0px;
 	margin: 0px;
+  background-color: rgba(64,95,175,0.1);
 }
 #video-container {
 	position: absolute;
 	width: 100%;
+
 }
+
+
 
 #controls {
 	visibility: visible;
+  opacity: 1;
 }
 
 #left-btn-container {
   position: absolute;
   left: 5%;
-  background-color: rgba(0,0,0,0.5);
+  bottom: 5%;
+  background-color: rgba(64,95,175,0.5);
   padding: 20px;
   border-radius: 15px;
 }
 
 #right-btn-container {
   position: absolute;
-  top: 50%;
+  bottom: 5%;
   right: 5%;
+
 }
 
 #play-btn{
@@ -32,11 +39,6 @@ body{
   background-image: url("images/player/play_btn.png");
   background-size: cover;
 }
-
-#play-btn:active {
-    width: 70px;
-    height: 74px;
-}
 #pause-btn{
   width: 100px;
   height: 100px;
@@ -44,7 +46,25 @@ body{
   background-size: cover;
 }
 
-video {
-  width: 100%    !important;
-  height: auto   !important;
+.button {
+
+  font-family: 'Arial';
+  font-weight: bold;
+  color: rgb(255,255,255);
+  background-color: rgba(64,95,175,0.5);
+  border: none;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+  float:right;
+}
+
+.button:active {
+  background-color: rgba(64,95,175,1);
+
 }
