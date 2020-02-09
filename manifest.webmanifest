@@ -1,11 +1,11 @@
 {
-  "name": "Test Website",
-  "short_name": "Test",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "name": "Novocure Conference Film",
+  "short_name": "Novocure",
+  "theme_color": "#405faf",
+  "background_color": "#405faf",
   "display": "standalone",
   "Scope": "/",
-  "start_url": "index.html",
+  "start_url": "/novocure-film/index.html",
   "orientation": "landscape",
   "icons": [
     {
