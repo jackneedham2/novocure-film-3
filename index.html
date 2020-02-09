@@ -4,19 +4,40 @@
 <head>
 	<title>Test Website</title>
 
+	<link rel="manifest" href="manifest.json">
+<link rel="manifest" href="manifest.webmanifest">
+<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.9/pwacompat.min.js"
+    integrity="sha384-VcI6S+HIsE80FVM1jgbd6WDFhzKYA0PecD/LcIyMQpT4fMJdijBh0I7Iblaacawc"
+    crossorigin="anonymous"></script>
 </head>
 <body>
 
 	<main>
 		<div id="video-container">
-			<video id="video-player" id="video-player" controls>
+			<video id="video-player" id="video-player">
 		  	<source src="dancingMan.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 
 			</video>
+			<div id="controls">
+				<div id="left-btn-container">
+				  	<div id="play-btn"></div>
+				  	<div id="pause-btn"></div>
+				</div>
+				<div id="right-btn-container">
+					Click me!
+				</div>
+			</div>
 		</div>
-		
-		wewerwere
 </main>
+<script src="app.js"></script>
+ <script src="upup.min.js"></script>
+  <script>
+    UpUp.start({
+      'content-url': 'index.html',
+  	  'assets': ['app.js', 'styles.css', 'dancingMan.mp4']
+
+    });
+  </script>
 </body>
 </html>
