@@ -17,14 +17,27 @@ function setVideoPlayerSize() {
 		v.style.width = window.innerWidth+"px";
 	var aspectRatio = +(window.innerWidth/window.innerHeight);
 	if (aspectRatio > 1.33) {
-		v.style.height = (window.innerHeight-10)+"px";
+		v.style.height = (window.innerHeight)+"px";
 	} else {
-		v.style.width = (window.innerWidth-10)+"px";
+		v.style.width = (window.innerWidth)+"px";
 	}
 }
 
 document.getElementById("video-player").addEventListener("click", function(){
+	console.log($("#controls").css("opacity"));
+
+	if ($("#controls").is(":animated")) {
+		$("#controls").stop();
+	}
+
 	$("#controls").fadeToggle();
+	var video = document.getElementById("video-player");
+	if (video.paused) {
+		video.play();
+	} else {
+		video.pause();
+	}
+
 });
 
 document.getElementById("play-btn").addEventListener("click", function() {
