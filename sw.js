@@ -4,7 +4,6 @@ var version = "v1";
 var staticCacheName = version;
 var staticAssets = [
 	'./',
-	'./manifest.json',
 	'./app.js',
 	'./dancingMan.mp4'
 ];
