@@ -54,10 +54,8 @@ if ('serviceWorker' in navigator) {
   document.querySelector('#status').appendChild(aElement);
 }
 
-document.querySelector('video').onloadedmetadata = function() {
-  var fileName = this.currentSrc.replace(/^.*[\\\/]/, '');
-  document.querySelector('#currentSrc').textContent = 'Video src: ' + fileName;
-};
+
+
 
 document.getElementById("video-player").addEventListener("click", function(){
 	var controls = document.getElementById("controls")
