@@ -12,7 +12,7 @@ console.log(left_controls_height);
 window.addEventListener('load', async e => {
 	if('serviceWorker' in navigator) {
 		try {
-			navigator.serviceWorker.register('service-worker.js');
+			navigator.serviceWorker.register('sw.js');
 			console.log("SW Register");
 		} catch(error) {
 			console.log("Reg failed")
