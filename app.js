@@ -42,7 +42,7 @@ if ('serviceWorker' in navigator) {
     .catch(function(error) {
       // Something went wrong during registration. The service-worker.js file
       // might be unavailable or contain a syntax error.
-      document.querySelector('#status').textContent = error;
+      console.log(error);
     });
 } else {
   // The current browser doesn't support service workers.
