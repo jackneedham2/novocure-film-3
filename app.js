@@ -8,6 +8,19 @@ left_controls.style.top = ((window.innerHeight -left_controls_height)/2) + "px";
 console.log(left_controls_height);
 
 
+
+window.addEventListener('load', async e => {
+	if('serviceWorker' in navigator) {
+		try {
+			navigator.serviceWorker.register('sw.js');
+			console.log("SW Register");
+		} catch(error) {
+			console.log("Reg failed")
+		}
+	}
+
+});
+
 document.getElementById("video-player").addEventListener("click", function(){
 	var controls = document.getElementById("controls")
 	console.log(controls.style.visibility);
