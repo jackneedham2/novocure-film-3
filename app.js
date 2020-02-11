@@ -75,14 +75,6 @@ document.onclick = function(){
 			$("#controls").fadeOut();
 		}
 	}, 2000);
-	resetTimeout = setTimeout(function() {
-		var video = document.getElementById("video-player");
-		if (video.paused) {
-			video.currentTime = 0;
-			video.pause();
-			$("#controls").fadeIn();
-		}
 
-	}, 30000)
 }
 
