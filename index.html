@@ -20,7 +20,7 @@
 	<main>
 		<div id="video-container">
 			<video id="video-player" id="video-player">
-		  	<source src="Novocure V06-1.mp4" type="video/mp4">
+		  	<source src="Novocure V08-1.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 
 			</video>
@@ -30,11 +30,13 @@
 				  	<div id="pause-btn"></div>
 				</div>
 				<div id="right-btn-container">
-					<a class="button" id="section-btn-1" time-code="6" onclick="skipToTime(this.id)">1. Preparation of cells for a TTFields treatment  experiment</a><br>
-					<a class="button" id="section-btn-2" time-code="46" onclick="skipToTime(this.id)">2. Set up for  TTFields experiment</a><br>
-					<a class="button" id="section-btn-3" time-code="67" onclick="skipToTime(this.id)">3. Start the TTFields in vitro application system software</a><br>
-					<a class="button" id="section-btn-4" time-code="96" onclick="skipToTime(this.id)">4. Prepare cells for evaluation</a><br>
-
+					<table>
+					<tr><td><a class="button" id="section-btn-1" time-code="6" onclick="skipToTime(this.id)">1. Preparation of cells for a TTFields treatment  experiment</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-2" time-code="46" onclick="skipToTime(this.id)">2. Set up for  TTFields experiment</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-3" time-code="67" onclick="skipToTime(this.id)">3. Start the TTFields in vitro application system software</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-4" time-code="96" onclick="skipToTime(this.id)">4. Prepare cells for evaluation</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-5" time-code="96" onclick="skipToTime(this.id)">Evaluation of the effects of TTFields in vitro</a><br></td></tr>
+					</table>
 
 				</div>
 			</div>
@@ -47,7 +49,7 @@
   <script>
     UpUp.start({
       'content-url': 'index.html',
-      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'novocure-film.mp4']
+      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'Novocure V08-1.mp4']
     });
   </script>
 </body>
