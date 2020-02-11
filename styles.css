@@ -19,7 +19,7 @@ body{
 #left-btn-container {
   position: absolute;
   left: 5%;
-  top: 5%;
+  bottom: 5%;
   background-color: rgba(64,95,175,0.5);
   padding: 20px;
   border-radius: 15px;
