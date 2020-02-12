@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 
-<html>
+<html manifest="cache.appcache">
 <head>
 	<title>Novocure Conference Film</title>
 
 	<link rel="manifest" href="manifest.json">
 	<link rel="manifest" href="manifest.webmanifest" />
+
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="apple-touch-icon" href="../images/icons/icon-144x144.png">
 	<link rel="stylesheet" type="text/css" href="styles.css">
@@ -20,7 +21,7 @@
 	<main>
 		<div id="video-container">
 			<video id="video-player" id="video-player">
-		  	<source src="Novocure V10-1.mp4" type="video/mp4">
+		  	<source src="NovocureV10-1.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 
 			</video>
@@ -48,7 +49,7 @@
   <script>
     UpUp.start({
       'content-url': 'index.html',
-      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'Novocure V10-1.mp4']
+      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'NovocureV10-1.mp4']
     });
   </script>
 </body>
