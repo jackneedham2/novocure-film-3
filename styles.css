@@ -54,15 +54,16 @@ body{
   color: rgb(255,255,255);
   background-color: rgba(64,95,175,0.5);
   border: none;
-  padding: 20px;
+  padding: 25px;
   text-align: center;
   text-decoration: none;
   display: block;
-  font-size: 24px;
+  font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 15px;
   float:right;
+  width: 300px;
 }
 
 .button:active {
