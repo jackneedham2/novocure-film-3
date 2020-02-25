@@ -37,8 +37,6 @@ body{
   width: 100px;
   height: 100px;
   margin-bottom: 20px;
-  background-image: url("play_btn.png");
-  background-size: cover;
 }
 #pause-btn{
   width: 100px;
