@@ -37,13 +37,13 @@ body{
   width: 100px;
   height: 100px;
   margin-bottom: 20px;
-  background-image: url("images/player/play_btn.png");
+  background-image: url("play_btn.png");
   background-size: cover;
 }
 #pause-btn{
   width: 100px;
   height: 100px;
-  background-image: url("images/player/pause_btn.png");
+  background-image: url("pause_btn.png");
   background-size: cover;
 }
 
