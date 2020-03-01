@@ -19,6 +19,7 @@
 <body>
 
 	<main>
+
 		<div id="video-container">
 			<video id="video-player" id="video-player">
 		  	<source src="NovocureV10-1.mp4" type="video/mp4">
@@ -26,9 +27,11 @@
 
 			</video>
 			<div id="controls">
+
+				<div id="controls-overlay"></div>
 				<div id="left-btn-container">
+				  	<div id="home-btn"></div>
 				  	<div id="play-btn" style="background-image: url('play_btn.png'); background-size: cover;"></div>
-				  	<div id="pause-btn"></div>
 				</div>
 				<div id="right-btn-container">
 					<table>
@@ -38,6 +41,9 @@
 					<tr><td><a class="button" id="section-btn-4" time-code="96" onclick="skipToTime(this.id)">4. Prepare cells for evaluation</a><br></td></tr>
 					</table>
 
+				</div>
+				<div id="status-bar">
+					Press play to start
 				</div>
 			</div>
 		</div>
@@ -49,7 +55,7 @@
   <script>
     UpUp.start({
       'content-url': 'index.html',
-      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'NovocureV10-1.mp4', 'pause_btn.png', 'play_btn.png']
+      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'NovocureV10-1.mp4', 'pause_btn.png', 'play_btn.png', 'home_btn.png']
     });
   </script>
 </body>
