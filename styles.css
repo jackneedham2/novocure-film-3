@@ -16,7 +16,7 @@ body{
   opacity: 1;
 
 }
-
+/*
 #controls-overlay {
   position: absolute;
   width: 100%;
@@ -24,7 +24,7 @@ body{
   top: 0;
     background: rgb(2,0,36);
 background: linear-gradient(0deg, rgba(2,0,36,0.6) 0%, rgba(0,0,0,0.3) 22%, rgba(0,0,0,0) 100%);
-}
+}*/
 
 #clickable-overlay {
   position: absolute;
