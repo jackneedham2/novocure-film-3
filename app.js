@@ -172,30 +172,37 @@ function viewToLocal() {
 
 function pushAllViews(allViews) {
 	console.log("pushing");
+	$("#notify-area").show();
 	allViews.forEach(sendToSheets);
 	viewCount = 0;
 }
 
 
+ console.log("sending to sheets");
+ var url = "https://script.google.com/macros/s/AKfycby8637zBtzeif33RvlT3OdLRgORZnUs1ICgB2E9Kw/exec";
+ var xhr = new XMLHttpRequest();
+
+$("#notify-area").hide();
 
 function sendToSheets(data) {
-  console.log("sending to sheets");
-  var url = "https://script.google.com/macros/s/AKfycby8637zBtzeif33RvlT3OdLRgORZnUs1ICgB2E9Kw/exec";
-  var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function()
     {
         if (xhr.readyState == 4 && xhr.status == 200)
         {
             var response = JSON.parse(xhr.responseText);
+            console.log(response);
             var responseData = JSON.parse(response.data);
 
             console.log("Success for key "+responseData.DBKey.toString());
-            console.log("Deleting");
-            deleteRecord(parseInt(responseData.DBKey));
+            console.log("All done");
+            $("#notify-status").html("<b>Metrics Uploaded.</b>");
         }
     }
-
+    xhr.onerror = function () {
+    	$("#notify-status").html("<b>Could not upload metrics.</b> Please check internet connection.");
+    }
+    
   xhr.open('POST', url);
   // xhr.withCredentials = true;
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -204,15 +211,15 @@ function sendToSheets(data) {
       return encodeURIComponent(k) + "=" + encodeURIComponent(data[k]);
   }).join('&');
   xhr.send(encoded);
+  $("#notify-scrollbox").append(JSON.stringify(data));
   return true;
  
 }
 
-setInterval(function() {
-	if (navigator.onLine) {
-		getAndDisplayViews();
-	}
-}, 10000);
+function sendMetrics() {
+	$("notify-area").show();
+	getAndDisplayViews();
+}
 
 
 var current_view = createViewObj(0);

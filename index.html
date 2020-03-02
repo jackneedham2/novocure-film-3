@@ -29,6 +29,9 @@
 			<div id="controls">
 
 				<div id="controls-overlay"></div>
+				<div id="metrics-button">
+					<div class="metrics-button" onclick="sendMetrics();">Metrics</div>
+				</div>
 				<div id="left-btn-container">
 				  	<div id="home-btn"></div>
 				  	<div id="play-btn" style="background-image: url('play_btn.png'); background-size: cover;"></div>
@@ -42,11 +45,21 @@
 					</table>
 
 				</div>
+
 				<div id="status-bar">
 					Press play to start
 				</div>
 			</div>
 		</div>
+
+		<div id="notify-area">
+		<div id="notify-status"><b>Sending metrics.</b> Please wait.</div>
+		<p>
+		Refresh to close this window. <br>
+		Raw metric data displayed below.<br>
+		<div id="notify-scrollbox"></div>
+	</div>
+
 	</main>
 <script src="jquery-3.4.1.min.js"></script>
 <script src="db.js"></script>
