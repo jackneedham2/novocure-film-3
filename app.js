@@ -200,7 +200,10 @@ function sendToSheets(data) {
         }
     }
     xhr.onerror = function (e) {
-    	$("#notify-status").html(e.target.status);
+    	if (e == null) {
+    		alert("test");
+    	}
+    	$("#notify-status").html("<b>Could not upload metrics.</b> Please check internet connection.");
     }
     
   xhr.open('POST', url);
