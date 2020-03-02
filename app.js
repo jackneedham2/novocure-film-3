@@ -164,24 +164,22 @@ function createViewObj(view_id) {
 
 function viewToLocal() {
 	current_view.datetime = getDateTime();
-	window.localStorage.setItem(viewCount.toString(), JSON.stringify(current_view));
+	submitViewToDB(current_view);
 	new_view_id = current_view.id + 1;
 	current_view = createViewObj(new_view_id);
 }
 
 
-function pushAllViews() {
-	console.log(viewCount);
-	Object.keys(window.localStorage).forEach(function(key){
-   		var d = JSON.parse(window.localStorage.getItem(key));
-   		d["lStorKey"] = key;
-   		console.log(sendToSheets(key, d));
-
-	});
+function pushAllViews(allViews) {
+	console.log("pushing");
+	allViews.forEach(sendToSheets);
 	viewCount = 0;
 }
 
-function sendToSheets(key, data) {
+
+
+function sendToSheets(data) {
+  console.log("sending to sheets");
   var url = "https://script.google.com/macros/s/AKfycby8637zBtzeif33RvlT3OdLRgORZnUs1ICgB2E9Kw/exec";
   var xhr = new XMLHttpRequest();
 
@@ -191,7 +189,9 @@ function sendToSheets(key, data) {
         {
             var response = JSON.parse(xhr.responseText);
             var responseData = JSON.parse(response.data);
-            window.localStorage.removeItem(responseData.lStorKey[0]);
+
+            console.log("Success for key "+responseData.DBKey.toString());
+            deleteRecord(parseInt(responseData.DBKey));
         }
     }
 
@@ -207,10 +207,12 @@ function sendToSheets(key, data) {
  
 }
 
+/*
 setInterval(function() {
 	if (navigator.onLine) {
 		pushAllViews();
 	}
 }, 10000);
+*/
 
 var current_view = createViewObj(0);
