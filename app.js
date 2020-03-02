@@ -203,7 +203,7 @@ function sendToSheets(data) {
     	if (e == null) {
     		alert("test");
     	}
-    	$("#notify-status").html("<b>Could not upload metrics.</b> Please check internet connection.");
+    	$("#notify-status").html(JSON.stringify(e));
     }
     
   xhr.open('POST', url);
