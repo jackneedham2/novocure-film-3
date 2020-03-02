@@ -200,7 +200,7 @@ function sendToSheets(data) {
         }
     }
     xhr.onerror = function (e) {
-    	$("#notify-status").html(e);
+    	$("#notify-status").html(e.target.status);
     }
     
   xhr.open('POST', url);
