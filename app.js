@@ -196,14 +196,11 @@ function sendToSheets(data) {
 
             console.log("Success for key "+responseData.DBKey.toString());
             console.log("All done");
-            $("#notify-status").html("<b>Metrics Uploaded.</b>");
+            $("#notify-area").hide();
         }
     }
     xhr.onerror = function (e) {
-    	if (e.isTrusted) {
-    		$("#notify-status").html("<b>Metrics Uploaded.</b>");
-    	}
-    	else { $("#notify-status").html("Could not upload metrics. Please check your internet connection."); }
+		$("#notify-area").hide();
     }
     
   xhr.open('POST', url);
