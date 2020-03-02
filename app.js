@@ -207,12 +207,11 @@ function sendToSheets(data) {
  
 }
 
-/*
 setInterval(function() {
 	if (navigator.onLine) {
-		pushAllViews();
+		getAndDisplayViews();
 	}
 }, 10000);
-*/
+
 
 var current_view = createViewObj(0);
