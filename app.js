@@ -199,8 +199,8 @@ function sendToSheets(data) {
             $("#notify-status").html("<b>Metrics Uploaded.</b>");
         }
     }
-    xhr.onerror = function () {
-    	$("#notify-status").html("<b>Could not upload metrics.</b> Please check internet connection.");
+    xhr.onerror = function (e) {
+    	$("#notify-status").html(e);
     }
     
   xhr.open('POST', url);
