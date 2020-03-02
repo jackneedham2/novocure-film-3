@@ -36,7 +36,7 @@ function getDateTime() {
     }
 
 
-// var current_view = createViewObj(0);
+
 
 setVideoPlayerSize();
 window.addEventListener("resize", setVideoPlayerSize);
@@ -114,7 +114,13 @@ function skipToTime(t) {
 	var video = document.getElementById("video-player");
 	video.currentTime = document.getElementById(t).getAttribute("time-code")
 	previousTime = document.getElementById("video-player").currentTime;
-	// current_view.engagements.push(document.getElementById(t).innerHTML);
+	current_view.engagements.push(document.getElementById(t).innerHTML);
+
+	gtag('event', 'Menu Click', {
+	'event_category': document.getElementById(t).innerHTML,
+	'event_label': 'cats'
+	});
+
 
 }
 
@@ -142,12 +148,12 @@ document.getElementById("video-player").ontimeupdate = function() {
 	var t = document.getElementById("video-player").currentTime;
 	var diff = t-previousTime
 	previousTime = t;
-	// current_view.durationwatched += diff;
+	current_view.durationwatched += diff;
 
 
 }
 
-/*
+
 
 function createViewObj(view_id) {
 	console.log(getDateTime());
@@ -168,6 +174,7 @@ function pushAllViews() {
 	console.log(viewCount);
 	Object.keys(window.localStorage).forEach(function(key){
    		var d = JSON.parse(window.localStorage.getItem(key));
+   		d["lStorKey"] = key;
    		console.log(sendToSheets(key, d));
 
 	});
@@ -177,12 +184,17 @@ function pushAllViews() {
 function sendToSheets(key, data) {
   var url = "https://script.google.com/macros/s/AKfycby8637zBtzeif33RvlT3OdLRgORZnUs1ICgB2E9Kw/exec";
   var xhr = new XMLHttpRequest();
-  xhr.addEventListener("load", function() {
-  	window.localStorage.removeItem(key);
-  });
-   xhr.addEventListener("error", function() {
-  	console.log("fail");
-  });
+
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState == 4 && xhr.status == 200)
+        {
+            var response = JSON.parse(xhr.responseText);
+            var responseData = JSON.parse(response.data);
+            window.localStorage.removeItem(responseData.lStorKey[0]);
+        }
+    }
+
   xhr.open('POST', url);
   // xhr.withCredentials = true;
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -201,4 +213,4 @@ setInterval(function() {
 	}
 }, 10000);
 
-*/
+var current_view = createViewObj(0);
