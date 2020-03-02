@@ -191,6 +191,7 @@ function sendToSheets(data) {
             var responseData = JSON.parse(response.data);
 
             console.log("Success for key "+responseData.DBKey.toString());
+            alert("Sent!");
             deleteRecord(parseInt(responseData.DBKey));
         }
     }
