@@ -35,22 +35,8 @@ function getDateTime() {
          return dateTime;
     }
 
-function createViewObj(view_id) {
-	console.log(getDateTime());
-	var view = {id: view_id, datetime: getDateTime(), durationwatched: 0, engagements: []};
-	viewCount += 1;
-	return view;
-}
 
-
-var current_view = createViewObj(0);
-
-function viewToLocal() {
-	current_view.datetime = getDateTime();
-	window.localStorage.setItem(viewCount.toString(), JSON.stringify(current_view));
-	new_view_id = current_view.id + 1;
-	current_view = createViewObj(new_view_id);
-}
+// var current_view = createViewObj(0);
 
 setVideoPlayerSize();
 window.addEventListener("resize", setVideoPlayerSize);
@@ -128,7 +114,7 @@ function skipToTime(t) {
 	var video = document.getElementById("video-player");
 	video.currentTime = document.getElementById(t).getAttribute("time-code")
 	previousTime = document.getElementById("video-player").currentTime;
-	current_view.engagements.push(document.getElementById(t).innerHTML);
+	// current_view.engagements.push(document.getElementById(t).innerHTML);
 
 }
 
@@ -156,10 +142,27 @@ document.getElementById("video-player").ontimeupdate = function() {
 	var t = document.getElementById("video-player").currentTime;
 	var diff = t-previousTime
 	previousTime = t;
-	current_view.durationwatched += diff;
+	// current_view.durationwatched += diff;
 
 
 }
+
+/*
+
+function createViewObj(view_id) {
+	console.log(getDateTime());
+	var view = {id: view_id, datetime: getDateTime(), durationwatched: 0, engagements: []};
+	viewCount += 1;
+	return view;
+}
+
+function viewToLocal() {
+	current_view.datetime = getDateTime();
+	window.localStorage.setItem(viewCount.toString(), JSON.stringify(current_view));
+	new_view_id = current_view.id + 1;
+	current_view = createViewObj(new_view_id);
+}
+
 
 function pushAllViews() {
 	console.log(viewCount);
@@ -197,3 +200,5 @@ setInterval(function() {
 		pushAllViews();
 	}
 }, 10000);
+
+*/
