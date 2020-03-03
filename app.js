@@ -126,11 +126,12 @@ function skipToTime(t) {
 
 var myTimeout = null;
 var resetTimeout = null;
-
+var homeTimeout = null;
 document.onclick = function(){
 	console.log("window");
 	clearTimeout(myTimeout);
 	clearTimeout(resetTimeout);
+	clearTimeout(homeTimeout);
 
 	myTimeout = setTimeout(function() {
 		var controls = document.getElementById("controls");
@@ -140,6 +141,16 @@ document.onclick = function(){
 			$("#controls").fadeOut();
 		}
 	}, 2000);
+
+	homeTimeout = setTimeout(function() {
+		var video = document.getElementById("video-player");
+		video.currentTime = 0;
+		pauseVideo();
+		$("#status-bar").html('Press play to start');
+		previousTime = document.getElementById("video-player").currentTime;
+		viewToLocal();
+
+	}, 180000)
 
 }
 

@@ -21,8 +21,8 @@
 	<main>
 
 		<div id="video-container">
-			<video id="video-player" id="video-player">
-		  	<source src="NovocureV10-1.mp4" type="video/mp4">
+			<video controls id="video-player" id="video-player">
+		  	<source src="NovocureV13-1.mp4" type="video/mp4">
 			Your browser does not support the video tag.
 
 			</video>
@@ -38,10 +38,9 @@
 				</div>
 				<div id="right-btn-container">
 					<table>
-					<tr><td><a class="button" id="section-btn-1" time-code="6" onclick="skipToTime(this.id)">1. Preparation of cells</a><br></td></tr>
-					<tr><td><a class="button" id="section-btn-2" time-code="46" onclick="skipToTime(this.id)">2. Experimental setup</a><br></td></tr>
-					<tr><td><a class="button" id="section-btn-3" time-code="67" onclick="skipToTime(this.id)">3. Start system software</a><br></td></tr>
-					<tr><td><a class="button" id="section-btn-4" time-code="96" onclick="skipToTime(this.id)">4. Prepare cells for evaluation</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-1" time-code="6" onclick="skipToTime(this.id)">Experimental Setup</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-2" time-code="46.5" onclick="skipToTime(this.id)">TTField Application</a><br></td></tr>
+					<tr><td><a class="button" id="section-btn-3" time-code="92" onclick="skipToTime(this.id)">Preparation of cells for evaluation</a><br></td></tr>
 					</table>
 
 				</div>
@@ -70,7 +69,7 @@
     UpUp.start({
       'cache-version': 'v3',
       'content-url': 'index.html',
-      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'NovocureV10-1.mp4', 'pause_btn.png', 'play_btn.png', 'home_btn.png']
+      'assets': ['styles.css', 'jquery-3.4.1.min.js', 'NovocureV13-1.mp4', 'pause_btn.png', 'play_btn.png', 'home_btn.png']
     });
   </script>
 
